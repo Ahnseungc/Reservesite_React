@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Detail from "./Page/Detail";
 import ResentReserve from "./Page/ResentReserve";
 import Main from "./Page/Main";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
 
