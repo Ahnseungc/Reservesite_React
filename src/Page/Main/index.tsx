@@ -5,6 +5,8 @@ import Search from "../../Components/Search";
 import { Header, Body } from "./styles";
 import useSWR from "swr";
 import fetcher from "../../fetcher";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
+import Detail from "../Detail";
 
 const key = process.env.REACT_APP_MOVIE_KEY;
 
