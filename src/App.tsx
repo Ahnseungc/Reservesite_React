@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/main" Component={Main} />
+          <Route path="/" Component={Main} />
           <Route path="/reserve" Component={ResentReserve} />
           <Route path="/detail/:id" Component={Detail} />
         </Routes>

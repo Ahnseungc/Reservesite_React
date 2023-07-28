@@ -1,12 +1,17 @@
-import React, { FC, VFC } from "react";
+import React, { FC, Fragment, VFC, useState } from "react";
 import useSWR from "swr";
 import fetcher from "../../fetcher";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import Seat from "../../Components/Seat";
+import { Seatbox, Seatst } from "./style";
 
 const key = process.env.REACT_APP_MOVIE_KEY;
 
 const Detail: FC = () => {
-  const location = useLocation();
+  const parm = useParams();
+  const [seat, setSeat] = useState(
+    Array.from(Array(3), () => new Array(10).fill(true))
+  );
 
   const { data, error } = useSWR(
     `/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${key}`,
@@ -16,13 +21,13 @@ const Detail: FC = () => {
   if (!data) return <div>loading...</div>;
 
   const found = data.movieListResult.movieList.find(
-    (e: any) => e.movieCd === location.state.mid
+    (e: any) => e.movieCd === parm.id
   );
 
-  console.log(found);
-
   return (
-    <div>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
       <div>이미지</div>
       <div>
         <div>
@@ -30,8 +35,18 @@ const Detail: FC = () => {
         </div>
         <div>{found.prdYear}</div>
         <div>{found.genreAlt}</div>
-        <div>좌석</div>
       </div>
+      <Seatbox>
+        {seat.map((e) => {
+          return (
+            <Seatst>
+              {e.map((el) => {
+                return <Seat state={el} />;
+              })}
+            </Seatst>
+          );
+        })}
+      </Seatbox>
     </div>
   );
 };
