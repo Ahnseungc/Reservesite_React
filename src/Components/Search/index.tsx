@@ -1,8 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 
-const Search = () => {
+interface Props {
+  SearchMovie: (e: any) => void;
+}
+
+const Search: FC<Props> = ({ SearchMovie }) => {
   return (
     <InputGroup
       size="lg"
@@ -15,6 +19,7 @@ const Search = () => {
         placeholder="검색어를 입력하세요"
         aria-label="search"
         aria-describedby="search1"
+        onChange={SearchMovie}
       />
       <button></button>
     </InputGroup>
