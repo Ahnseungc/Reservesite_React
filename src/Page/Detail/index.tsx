@@ -8,6 +8,7 @@ import { Seatbox, Seatst } from "./style";
 const key = process.env.REACT_APP_MOVIE_KEY;
 
 const Detail: FC = () => {
+  let seatNum = 0;
   const parm = useParams();
   const [seat, setSeat] = useState(
     Array.from(Array(3), () => new Array(10).fill(true))
@@ -41,7 +42,8 @@ const Detail: FC = () => {
           return (
             <Seatst>
               {e.map((el) => {
-                return <Seat state={el} />;
+                seatNum += 1;
+                return <Seat state={el} seatNum={seatNum} />;
               })}
             </Seatst>
           );

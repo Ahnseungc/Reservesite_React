@@ -1,12 +1,14 @@
-import React, { FC, useCallback, useState } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
 import { Box, ReservedBox } from "./style";
 
 interface Props {
   state: boolean;
+  seatNum: number;
 }
 
-const Seat: FC<Props> = (state) => {
-  const [rev, setRev] = useState(state.state);
+const Seat: FC<Props> = ({ state, seatNum }) => {
+  const [rev, setRev] = useState(state);
+  sessionStorage.setItem(seatNum.toString(), rev.toString());
 
   const eathandler = useCallback(
     (e: any) => {
