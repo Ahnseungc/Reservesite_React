@@ -1,10 +1,10 @@
 import React, { Fragment, useCallback, useState } from "react";
-import Day from "../../Components/Day";
-import Product from "../../Components/Product";
-import Search from "../../Components/Search";
+import Day from "../../components/Day";
+import Product from "../../components/Product";
+import Search from "../../components/Search";
 import { Header, Body } from "./styles";
 import useSWR from "swr";
-import fetcher from "../../fetcher";
+import fetcher from "../../utils/fetcher";
 
 const key = process.env.REACT_APP_MOVIE_KEY;
 

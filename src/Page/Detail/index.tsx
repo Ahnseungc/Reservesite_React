@@ -1,8 +1,8 @@
 import React, { FC, Fragment, VFC, useState } from "react";
 import useSWR from "swr";
-import fetcher from "../../fetcher";
+import fetcher from "../../utils/fetcher";
 import { useParams } from "react-router-dom";
-import Seat from "../../Components/Seat";
+import Seat from "@components/Seat";
 import { Seatbox, Seatst } from "./style";
 
 const key = process.env.REACT_APP_MOVIE_KEY;
