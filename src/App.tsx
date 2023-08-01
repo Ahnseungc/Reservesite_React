@@ -6,9 +6,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import loadable from "@loadable/component";
-const Detail = loadable(() => import("./Page/Detail"));
-const ResentReserve = loadable(() => import("./Page/ResentReserve"));
-const Main = loadable(() => import("./Page/Main"));
+const Detail = loadable(() => import("./pages/Detail"));
+const ResentReserve = loadable(() => import("./pages/ResentReserve"));
+const Main = loadable(() => import("./pages/Main"));
 
 function App() {
   return (

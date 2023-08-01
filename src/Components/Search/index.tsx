@@ -21,7 +21,6 @@ const Search: FC<Props> = ({ SearchMovie }) => {
         aria-describedby="search1"
         onChange={SearchMovie}
       />
-      <button></button>
     </InputGroup>
   );
 };

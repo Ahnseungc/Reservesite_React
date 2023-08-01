@@ -2,8 +2,8 @@ import React, { FC, Fragment, VFC, useState } from "react";
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
 import { useParams } from "react-router-dom";
-import Seat from "@components/Seat";
-import { Seatbox, Seatst } from "./style";
+import Seat from "../../components/Seat";
+import { Seatbox, Seatst, Img, Button } from "./style";
 
 const key = process.env.REACT_APP_MOVIE_KEY;
 
@@ -29,13 +29,13 @@ const Detail: FC = () => {
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <div>이미지</div>
+      <Img></Img>
       <div>
-        <div>
+        <h3>
           {found.movieNm},{found.movieNmEn}
-        </div>
-        <div>{found.prdYear}</div>
-        <div>{found.genreAlt}</div>
+        </h3>
+        <h4>{found.prdYear}</h4>
+        <h4>{found.genreAlt}</h4>
       </div>
       <Seatbox>
         {seat.map((e) => {
@@ -49,6 +49,7 @@ const Detail: FC = () => {
           );
         })}
       </Seatbox>
+      <Button>예약</Button>
     </div>
   );
 };

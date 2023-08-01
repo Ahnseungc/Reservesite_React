@@ -17,7 +17,6 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "react": ["./node_modules/@types/react"],
       "@hooks/*": ["hooks/*"],
       "@components/*": ["components/*"],
       "@layouts/*": ["layouts/*"],
@@ -26,5 +25,5 @@
       "@typings/*": ["typings/*"]
     }
   },
-  "include": ["src"]
+  "includes": ["src"]
 }

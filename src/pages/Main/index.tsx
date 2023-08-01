@@ -1,7 +1,8 @@
 import React, { Fragment, useCallback, useState } from "react";
-import Day from "../../components/Day";
+
 import Product from "../../components/Product";
 import Search from "../../components/Search";
+
 import { Header, Body } from "./styles";
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
@@ -35,7 +36,6 @@ const Main = () => {
     <Fragment>
       <Header>
         <Search SearchMovie={SearchMovie} />
-        <Day />
       </Header>
       <hr />
       <Body>
